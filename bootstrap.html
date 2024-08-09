@@ -89,7 +89,16 @@
 
             $("#banner").html("<h1>"+naviH+"</h1>").addClass("d-flex justify-conent-center align-items-center");
            
-           
+            $('.navbar-nav>li>a').on('click', function(){
+                $('.navbar-collapse').collapse('hide');
+                $("#hd button").find("span").removeClass("bi bi-x").addClass("navbar-toggler-icon");
+
+            });
+            
+            
+            $("#hd button").click(function() {
+                $(this).find("span").toggleClass("navbar-toggler-icon bi bi-x");
+            });
 
             $(window).resize(function(){
                 console.log($(this).width());               
